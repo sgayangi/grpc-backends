@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package grpcapi.v1.payment;
+option go_package  = "order-service/proto";
+
+import "common.proto";
+import "order.proto";
+
+message Payment {
+    string id = 1;
+    grpcapi.v1.order.Order order = 2;
+    float amount = 3;
+    string status = 4;
+    grpcapi.v1.common.Metadata metadata = 5;
+}
+
+message ProcessPaymentRequest {
+    Payment payment = 1;
+}
+
+message ProcessPaymentResponse {
+    string payment_id = 1;
+    grpcapi.v1.common.Metadata metadata = 2;
+}
+
+service PaymentService {
+    rpc ProcessPayment (ProcessPaymentRequest) returns (ProcessPaymentResponse);
+}

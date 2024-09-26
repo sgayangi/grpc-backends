@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package grpcapi.v1.common;
+option go_package  = "order-service/proto";
+
+message Metadata {
+    string request_id = 1;
+    int64 timestamp = 2;
+}
