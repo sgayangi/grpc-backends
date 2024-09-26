@@ -3,9 +3,6 @@ package org.apk.v1.student_service;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
-import java.util.Random;
-import java.util.UUID;
-
 @GrpcService
 public class StudentServiceImpl extends StudentServiceGrpc.StudentServiceImplBase {
     @Override
